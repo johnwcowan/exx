@@ -1,0 +1,61 @@
+Options:
+-r      display list of recoverable files
+-r n    recover file n
+-R      read-onlyl
+-t tag  jump to tag
+-s file source commands
+-c cmd  single command (may be repeated)
+-m      write no files
+-M      modify no files
+
+Commands:
+!               filter lines through command
+&               substitute &
+(eof)           display half a screen
+<               shift lines left
+=               compute line number
+>               shift lines right
+@               execute commands in buffer
+append          append lines
+change          replace lines
+copy / t        copy lines
+delete          delete lines, copy to buffer
+delimit         restructure lines based on not matching r.e.
+delmark         delete mark
+edit            reload or replace current buffer
+file            buffer metadata
+flush           discard current buffer
+global          execute commands on lines that match r.e.
+insert          insert lines
+join            join lines into a single line
+list            list lines with visible controls
+mark / k        set mark
+match           match paired punctuation
+metabuffer      switch to the metabuffer
+move            move lines
+new             append new buffer(s)
+next            move to next buffer
+number / #      list with line numbers
+open            open buffer whose name is on a line
+preserve        save complete state
+put             copy lines to buffer
+quit            terminate editor
+read            insert file into buffer
+recover         recover file
+redo            undo undo
+rewind          jump back to first buffer
+segment         restructure lines based on matching r.e.
+set             set option
+shell           run shell'
+source          execute commands from file
+subst           substitute nth (or all) instances
+suspend / stop  suspend process
+tag             jump to tag
+undo            undo last change
+v               execute commands on lines that don't match r.e.
+version         display version and other info
+wq / xit        write unmodified buffers and exit
+write           write buffer
+yank            insert named buffer into current buffer
+z               paginate
+~               substitute ~
