@@ -1,21 +1,21 @@
 Options:
 +       jump to specified line
 +/      jump to matched line
--M      modify no files
--R      read-only
 -c cmd  single command (may be repeated)
 -m      write no files
+-M      modify no files
 -r      display list of recoverable files
 -r n    recover file n
+-R      read-only
 -s file source commands
 -t tag  jump to tag
--w      set window size
+-w      set pagination window size
 
 
 Commands:
 !               filter lines through command
 &               repeat last substitute &
-(eof)           display half a screen
+(eof)           display half a pagination window
 <               shift lines left
 =               compute line number
 >               shift lines right
@@ -66,13 +66,13 @@ version         display version and other info
 wq / xit        write unmodified buffers and exit
 write           write buffer
 yank            insert named buffer into current buffer
-z               paginate
+z               display a whole pagination window
 ~               repeat last substitute using last search r.e.
 
 Set options
 
-autoindent      ident in insert mode
-autoread        
+autoindent      ident in insert mode (eof backs up one tab)
+autoread        reread files that have changed externally
 autoprint       print last affected line
 autowrite       write out current buffer when changing buffers
 beautify        remove useless control characters from input files
@@ -82,6 +82,7 @@ expandtab       expand tabs in insert mode
 ignorecase      ignore case in r.e.
 lazyread        read initial files lazily
 list            output lines as if with list command
+matchpairs      set matching pairs for match command
 number          output lines as if with number command
 prompt          turn on and off command mode prompt
 readonly        modify no files
@@ -91,9 +92,11 @@ shiftwidth      distance of < and > commands
 tabstop         spaces per tab
 tags            search path for tags files
 wrapscan        searches wrap around buffer
-write           allow writing of files
-writebackup     rename existing files to backups
+write           allows writing of files
 writeany        allows writing any file
+writeall        write all files when writing
+writebackup     rename existing files to backups
+
 
 
 
