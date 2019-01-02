@@ -97,6 +97,8 @@ writeany        allows writing any file
 writeall        write all files when writing
 writebackup     rename existing files to backups
 
+Consider split screen for command line vs. display of current text
+
 
 
 
