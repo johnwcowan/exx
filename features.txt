@@ -14,60 +14,60 @@ Options:
 
 Commands:
 !               filter lines through command
-&               repeat last substitute &
-(eof)           display half a pagination window
-<               shift lines left
+&               repeat last substitute & (nosam)
+(eof)           display half a pagination window (nosam)
+<               shift lines left (nosam)
 =               compute line number
->               shift lines right
-@               execute commands in buffer
+>               shift lines right (nosam)
+@               execute commands in buffer (nosam)
 append          append lines
 change          replace lines
 copy / t        copy lines
 delete          delete lines, copy to buffer
 delimit         restructure lines based on not matching r.e.
-delmark         delete mark
-earlier         skip to previous undo list branch
+delmark         delete mark (nosam)
+earlier         skip to previous undo list branch (nosam)
 edit            reload or replace current buffer
 file            buffer metadata
 flush           discard current buffer
 global          execute commands on lines that match r.e.
 insert          insert lines
-join            join lines into a single line
-later           skip to next undo list branch
-list            list lines with visible controls
+join            join lines into a single line (nosam)
+later           skip to next undo list branch (nosam)
+list            list lines with visible controls (nosam)
 mark / k        set mark
-match           match paired punctuation
-metabuffer      switch to the metabuffer
-mkexxrc         write out settings to file
+match           match paired punctuation (nosam)
+metabuffer      switch to the metabuffer (nosam)
+mkexxrc         write out settings to file (nosam)
 move            move lines
 new             append new buffer(s)
 next            move to next buffer
-number / #      list with line numbers
-open            open buffer whose name is on a line
-preserve        save complete state
+number / #      list with line numbers (nosam)
+open            open buffer whose name is on a line (nosam)
+preserve        save complete state (nosam)
 print           list lines as-is
-put             copy lines to buffer
+put             copy lines to buffer (nosam)
 quit            terminate editor
 read            insert file into buffer
 recover         recover file
 redo            undo undo
-rewind          jump back to first buffer
+rewind          jump back to first buffer (nosam)
 segment         restructure lines based on matching r.e.
-set             set option
-shell           run shell'
-source          execute commands from file
-subst           substitute nth (or all) instances
-suspend / stop  suspend process
-tag             jump to tag
+set             set option (nosam)
+shell           run shell
+source          execute commands from file (nosam)
+subst           substitute nth (or all) instances (partsam)
+suspend / stop  suspend process (nosam)
+tag             jump to tag (nosam)
 undo            undo last change
-undolist        show branches of undo tree
+undolist        show branches of undo tree (nosam)
 v               execute commands on lines that don't match r.e.
-version         display version and other info
-wq / xit        write unmodified buffers and exit
-write           write buffer
-yank            insert named buffer into current buffer
-z               display a whole pagination window
-~               repeat last substitute using last search r.e.
+version         display version and other info (nosam)
+wq / xit        write unmodified buffers and exit (nosam)
+write           write buffer (nosam)
+yank            insert named buffer into current buffer (nosam)
+z               display a whole pagination window (nosam)
+~               repeat last substitute using last search r.e. (nosam)
 
 Set options
 
@@ -98,6 +98,8 @@ writeall        write all files when writing
 writebackup     rename existing files to backups
 
 Consider split screen for command line vs. display of current text
+Consider second window for display
+
 
 
 
