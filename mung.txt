@@ -1,47 +1,34 @@
 Options:
--m      write no files
--M      modify no files
--r      display list of recoverable files
--r n    recover file n
--R      read-only
+-M      modify no files (can't write any file)
+-R      read-only (can't write input files)
 
 
 Commands:
 |               filter lines through command
-delmark         delete mark (nosam)
-earlier         skip to previous undo list branch (nosam)
-edit            reload or replace current buffer
+args            show arguments
 file            buffer metadata
 flush           discard current buffer
-insert          insert lines
-later           skip to next undo list branch (nosam)
-list            list lines with visible controls (nosam)
-new             append new buffer(s)
+mung            append new buffer(s)
 next            move to next buffer
-number / #      list with line numbers (nosam)
 preserve        save complete state (nosam)
-print           list lines as-is
 quit            terminate editor
 read            insert file into buffer
-recover         recover file
-redo            undo undo
+redo            undo undo (option n to choose one)
+redolist        see possible redos
 rewind          jump back to first buffer (nosam)
 set             set option (nosam)
 shell / !       run shell
 suspend / stop  suspend process (nosam)
 undo            undo last change
-undolist        show branches of undo tree (nosam)
 version         display version and other info (nosam)
 wq / xit        write unmodified buffers and exit (nosam)
 write           write buffer (nosam)
+???             command to output pipeline
 
 Set options
 
 autoread        reread files that have changed externally
 autowrite       write out current buffer when changing buffers
-lazyread        read initial files lazily
 readonly        modify no files
-write           allows writing of files
 writeany        allows writing any file
-writeall        write all files when writing
 writebackup     rename existing files to backups
