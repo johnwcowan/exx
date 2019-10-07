@@ -2,7 +2,6 @@ Options:
 -M      modify no files (can't write any file)
 -R      read-only (can't write input files)
 
-
 Commands:
 |               filter lines through command
 args            show arguments
