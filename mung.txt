@@ -1,31 +1,33 @@
 Options:
--M      modify no files (can't write any file)
--R      read-only (can't write input files)
+-M      modify no files (can't write to any files)
+-R      read-only (can't write to input files)
 -A      autoread changed files
--W      autowrite files when moving away
--B      back up files on write
+-B      back up files on write using Emacs conventions
 
 Commands:
-|               filter lines through command (\ for multiline)
+|               filter state to make new state (\ for multiline command)
 args            show arguments
-cd              change directory
 choices         list redo choices
-exit            write all modified files and exit
-file            file metadata
+edit            make new state with editor
+exit / x        write all modified files and exit
+file            file and state metadata
 flush           discard current file
+goto            jump to tagged state
 mung            append new file(s)
 next            move to next file
-preserve        save complete state
+open            open appropriate viewer on current state
+page            view state with pager
+preserve        save full state after exit
 prev            move to previous file
 quit            flush all files and exit
-read            insert file into buffer
-redo            undo undo (option n to choose one)
-rename          change name of current file
+redo            undo undo (regex to choose one)
+rename          change internal name of current file
 rewind          jump back to first buffer
 set             set option
 shell / !       run shell
 suspend / stop  suspend process
-undo            undo last change
+tag             tag current state
+undo            undo last change to state
+update          reread changed file, invalidate all state
 version         display version and other info
-write           write buffer (nosam)
-???             command to output pipeline
+write           write current state and shell pipeline to files
