@@ -17,7 +17,7 @@ mung            append new file(s)
 next            move to next file
 open            open appropriate viewer on current state
 page            view state with pager
-preserve        save full state after exit
+preserve        save the full state of the current file after quit
 prev            move to previous file
 quit            flush all files and exit
 redo            undo undo (regex to choose one)
@@ -25,7 +25,6 @@ rename          change internal name of current file
 rewind          jump back to first buffer
 set             set option
 shell / !       run shell
-suspend / stop  suspend process
 tag             tag current state
 undo            undo last change to state
 update          reread changed file, invalidate all state
