@@ -7,17 +7,19 @@ Commands:
 |               filter state to make new state (\ for multiline command)
 !               run shell command (\ for multiline command)
 abandon         delete all states and exit
+back / b        return from last goto
 choices / c     list redo choices
 describe / d    set comment for state
-edit            make new state with editor
+edit / e        make new state with editor
 exit / x        write file, delete all states, and terminate
 file / f        file and state metadata, optionally change file name
 goto / g        jump to tagged state
 page / p        view state with pager
 quit / q        remove cached files, keep states, and terminate
 redo / r        undo undo (regex to choose one)
-return          return from latest goto
 tag / t         tag current state
 undo / u        undo last change to state
 update          remove cached files, reread file
 write / w       write current state and shell pipeline to files
+
+Tables: states(table-id, parent-id, command, description, valid); stack(id, table-id); current(id)
