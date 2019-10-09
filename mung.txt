@@ -1,32 +1,23 @@
 Options:
--M      modify no files (can't write to any files)
--R      read-only (can't write to input files)
--A      autoread changed files
+-M      modify no files (can't write at all)
+-R      read-only (can't write over input file)
 -B      back up files on write using Emacs conventions
 
 Commands:
 |               filter state to make new state (\ for multiline command)
-args            show arguments
-choices         list redo choices
+!               run shell command (\ for multiline command)
+abandon         delete all states and exit
+choices / c     list redo choices
+describe / d    set comment for state
 edit            make new state with editor
-exit / x        write all modified files and exit
-file            file and state metadata
-flush           discard current file
-goto            jump to tagged state
-mung            append new file(s)
-next            move to next file
-open            open appropriate viewer on current state
-page            view state with pager
-preserve        save the full state of the current file after quit
-prev            move to previous file
-quit            flush all files and exit
-redo            undo undo (regex to choose one)
-rename          change internal name of current file
-rewind          jump back to first buffer
-set             set option
-shell / !       run shell
-tag             tag current state
-undo            undo last change to state
-update          reread changed file, invalidate all state
-version         display version and other info
-write           write current state and shell pipeline to files
+exit / x        write file, delete all states, and terminate
+file / f        file and state metadata, optionally change file name
+goto / g        jump to tagged state
+page / p        view state with pager
+quit / q        remove cached files, keep states, and terminate
+redo / r        undo undo (regex to choose one)
+return          return from latest goto
+tag / t         tag current state
+undo / u        undo last change to state
+update          remove cached files, reread file
+write / w       write current state and shell pipeline to files
