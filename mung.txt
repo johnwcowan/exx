@@ -24,10 +24,12 @@ quit / q        remove cached files, keep states, and terminate
 abandon         delete all states and exit
 
 Miscellaneous commands:
-purge           eliminate caches until cache size is small enough
 show / s        file and state metadata, optionally change file name
 page / p        view state with pager
 !               run shell command (\ for multiline command)
 
 Tables: states(table-id, parent-id, tag, command, description);
         stack(id, table-id); current(id);
+
+Purge considerations: file age, file size as fraction of free space, time to regenerate file
+
