@@ -1,25 +1,33 @@
 Options:
--M      modify no files (can't write at all)
--R      read-only (can't write over input file)
+-R      read-only (exit = quit)
 -B      back up files on write using Emacs conventions
+-o      capture all of standard input and write it to a file (for pipelines)
 
-Commands:
+Editing commands:
 |               filter state to make new state (\ for multiline command)
-!               run shell command (\ for multiline command)
-abandon         delete all states and exit
-back / b        return from last goto
-choices / c     list redo choices
 describe / d    set comment for state
 edit / e        make new state with editor
-exit / x        write file, delete all states, and terminate
-file / f        file and state metadata, optionally change file name
-goto / g        jump to tagged state
-page / p        view state with pager
-quit / q        remove cached files, keep states, and terminate
-redo / r        undo undo (regex to choose one)
-tag / t         tag current state
-undo / u        undo last change to state
-update          remove cached files, reread file
-write / w       write current state and shell pipeline to files
 
-Tables: states(table-id, parent-id, command, description, valid); stack(id, table-id); current(id)
+State tree commands:
+undo / u        undo last change to state
+redo / r        undo undo (regex to choose one)
+choices / c     list redo choices
+
+Tag commands:
+tag / t         tag current state
+goto / g        jump to tagged state
+back / b        return from last goto
+
+Termination commands:
+exit / x        write file, delete all states, and terminate
+quit / q        remove cached files, keep states, and terminate
+abandon         delete all states and exit
+
+Miscellaneous commands:
+purge           eliminate caches until cache size is small enough
+show / s        file and state metadata, optionally change file name
+page / p        view state with pager
+!               run shell command (\ for multiline command)
+
+Tables: states(table-id, parent-id, tag, command, description);
+        stack(id, table-id); current(id);
