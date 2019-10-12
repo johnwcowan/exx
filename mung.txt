@@ -1,6 +1,7 @@
 Options:
 -R      read-only (exit = quit)
 -B      back up files on write using Emacs conventions
+-D      no readline
 -o      capture all of standard input and write it to a file (for pipelines)
 
 Editing commands:
@@ -24,8 +25,10 @@ quit / q        remove cached files, keep states, and terminate
 abandon         delete all states and exit
 
 Miscellaneous commands:
+all / a         show whole tree
 show / s        file and state metadata, optionally change file name
 page / p        view state with pager
+help / h        show this help
 !               run shell command (\ for multiline command)
 
 Tables: states(table-id, parent-id, tag, command, description);
