@@ -32,8 +32,13 @@ purge           remove cached files according to $MUNG_AGE and $MUNG_LIMITS
 help / h        show this help
 !               run shell command (\ for multiline command)
 
-Tables: states(table-id, parent-id, tag, command, description);
-        stack(id, table-id); current(id);
+Files in the state directory:
+1-n             cached state files
+states          tab-separated file of states: parent, command, description (\t and \n escapes)
+tags            tab-separated file of tags: tag, state id
+stack           file containing the goto stack using state ids
+current         the current state id
+lock            pid of currently running mung (can be broken if there is no such pid)
 
 Environment variables:
 
