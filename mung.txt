@@ -33,6 +33,7 @@ help / h        show this help
 !               run shell command (\ for multiline command)
 
 Files in the state directory:
+0               copy of original file
 1-n             cached state files
 states          tab-separated file of states: parent, command, description (\t and \n escapes)
 tags            tab-separated file of tags: tag, state id
