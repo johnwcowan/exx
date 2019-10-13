@@ -1,38 +1,45 @@
 Options:
--R      read-only (exit = quit)
--B      back up files on write using Emacs conventions
--D      no readline
--o      capture all of standard input and write it to a file (for pipelines)
+-R              read-only (exit = quit)
+-B              back up files on write using Emacs conventions
+-D              no readline
+-o              capture all of standard input and write it atomically to a file (for pipelines)
 
 Editing commands:
 |               filter state to make new state (\ for multiline command)
 describe / d    set comment for state
-edit / e        make new state with editor
+edit / e        make new state with $VISUAL or $EDITOR
 
 State tree commands:
 undo / u        undo last change to state
-redo / r        undo undo (regex to choose one)
+redo / r        undo undo (specify a substring)
 choices / c     list redo choices
 
 Tag commands:
-tag / t         tag current state
-goto / g        jump to tagged state
+tag / t         tag current state with specified tag
+goto / g        jump to specified tagged state
 back / b        return from last goto
 
 Termination commands:
 exit / x        write file, delete all states, and terminate
-quit / q        remove cached files, keep states, and terminate
-abandon         delete all states and exit
+quit / q        remove cached files, keep state metadata, and terminate
+abandon         delete all states and terminate
 
 Miscellaneous commands:
 all / a         show whole tree
-show / s        file and state metadata, optionally change file name
-page / p        view state with pager
+show / s        file and state metadata
+page / p        view state with $PAGER
+purge           remove cached files according to $MUNG_AGE and $MUNG_LIMITS
 help / h        show this help
 !               run shell command (\ for multiline command)
 
 Tables: states(table-id, parent-id, tag, command, description);
         stack(id, table-id); current(id);
 
-Purge considerations: file age, file size as fraction of free space, time to regenerate file
+Environment variables:
+
+MUNG_AGE        Cached files older than this (in days) are removed
+MUNG_LIMITS     Specify soft and hard limits on size of cached files as 30G/60G;
+                above the soft limit, cached files are removed according
+                to the time it takes to regenerate them, but above the
+                hard limit by size.
 
