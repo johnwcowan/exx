@@ -20,7 +20,7 @@ goto / g        jump to specified tagged state
 back / b        return from last goto
 
 Termination commands:
-exit / x        write file, delete all states, and terminate
+exit / x        write output file, delete all states, and terminate
 quit / q        remove cached files, keep state metadata, and terminate
 abandon         delete all states and terminate
 
@@ -48,4 +48,6 @@ MUNG_LIMITS     Specify soft and hard limits on size of cached files as 30G/60G;
                 above the soft limit, cached files are removed according
                 to the time it takes to regenerate them, but above the
                 hard limit by size.
-
+VISUAL          Editor used by e command
+EDITOR          Used if VISUAL is not defined, defaults to vi
+PAGER           Pager used by p command, defaults to less.
