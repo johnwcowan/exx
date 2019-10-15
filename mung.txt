@@ -1,47 +1,53 @@
 Options:
--m      write no files
--M      modify no files
--r      display list of recoverable files
--r n    recover file n
--R      read-only
+-R              read-only (exit = quit)
+-B              back up files on write using Emacs conventions
+-D              no readline
+-o              capture all of standard input and write it atomically to a file (for pipelines)
 
+Editing commands:
+|               filter state to make new state (\ for multiline command)
+describe / d    set comment for state
+edit / e        make new state with $VISUAL or $EDITOR
 
-Commands:
-|               filter lines through command
-delmark         delete mark (nosam)
-earlier         skip to previous undo list branch (nosam)
-edit            reload or replace current buffer
-file            buffer metadata
-flush           discard current buffer
-insert          insert lines
-later           skip to next undo list branch (nosam)
-list            list lines with visible controls (nosam)
-new             append new buffer(s)
-next            move to next buffer
-number / #      list with line numbers (nosam)
-preserve        save complete state (nosam)
-print           list lines as-is
-quit            terminate editor
-read            insert file into buffer
-recover         recover file
-redo            undo undo
-rewind          jump back to first buffer (nosam)
-set             set option (nosam)
-shell / !       run shell
-suspend / stop  suspend process (nosam)
-undo            undo last change
-undolist        show branches of undo tree (nosam)
-version         display version and other info (nosam)
-wq / xit        write unmodified buffers and exit (nosam)
-write           write buffer (nosam)
+State tree commands:
+undo / u        undo last change to state
+redo / r        undo undo (specify a substring)
+choices / c     list redo choices
 
-Set options
+Tag commands:
+tag / t         tag current state with specified tag
+goto / g        jump to specified tagged state
+back / b        return from last goto
 
-autoread        reread files that have changed externally
-autowrite       write out current buffer when changing buffers
-lazyread        read initial files lazily
-readonly        modify no files
-write           allows writing of files
-writeany        allows writing any file
-writeall        write all files when writing
-writebackup     rename existing files to backups
+Termination commands:
+exit / x        write output file, delete all states, and terminate
+quit / q        remove cached files, keep state metadata, and terminate
+abandon         delete all states and terminate
+
+Miscellaneous commands:
+all / a         show whole tree
+show / s        file and state metadata
+page / p        view state with $PAGER
+purge           remove cached files according to $MUNG_AGE and $MUNG_LIMITS
+help / h        show this help
+!               run shell command (\ for multiline command)
+
+Files in the state directory:
+0               copy of original file
+1-n             cached state files
+states          tab-separated file of states: parent, command, description (\t and \n escapes)
+tags            tab-separated file of tags: tag, state id
+stack           file containing the goto stack using state ids
+current         the current state id
+lock            pid of currently running mung (can be broken if there is no such pid)
+
+Environment variables:
+
+MUNG_AGE        Cached files older than this (in days) are removed
+MUNG_LIMITS     Specify soft and hard limits on size of cached files as 30G/60G;
+                above the soft limit, cached files are removed according
+                to the time it takes to regenerate them, but above the
+                hard limit by size.
+VISUAL          Editor used by e command
+EDITOR          Used if VISUAL is not defined, defaults to vi
+PAGER           Pager used by p command, defaults to less.
