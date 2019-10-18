@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS cats(
     UNIQUE (catname))
     WITHOUT ROWID;
 
-CREATE TABLE IF NOT EXISTS properties(
+CREATE TABLE IF NOT EXISTS props(
   propid VARCHAR NOT NULL,
   propname VARCHAR NOT NULL,
       PRIMARY KEY (propid),
