@@ -1,0 +1,24 @@
+Well, I have now learned that Datalog is subsumed by the RA plus transitive closure.  It also turns out that there are no non-ground facts, since they make sense only as defaults, and Datalog rules are not ordered the way Prolog rules are.
+
+So here's a sketch of how Tutorial D might be extended to do Datalog:
+
+VAR PUBLIC/PRIVATE RULES<relation var name> <relation type> { <rule commalist> }STRATUM n
+
+If the STRATUM clause is omitted, the relvar belongs to stratum 0.  More about strata later.
+
+<rule> ::= <rule head> :- <rule body>
+<rule head> ::= <logic attribute commalist>
+<rule body> ::= { <term commalist> }
+<term> ::= [NOT] <relation var name> <logic attributes commalist> | <logic atom> <scalar comp op> <logic atom>
+<logic attribute> ::= <attribute name> <logic atom>
+ <logic atom> ::= <scalar selector inv> | <logic var name>
+
+The rule head specifies the values for each of the attributes in the new relvar; it is an error to omit any attributes.  If the value is a constant, the new relvar will have that value in all tuples.  If it is a variable, then all the relvars mentioned in the rule body are renamed so that
+
+Each rule is interpreted to mean that the relvar  is the union of certain relations based on the relvars mentioned after the `
+
+The following restrictions exist on rules:  a variable in the head term must also be present in at least one body term (not negated nor a comparison term); every variable in a negated term must appear in a non-negated term; 
+
+Strata form a restriction on all relvars taken together, public and private.  A rule in stratum n can only refer to negated terms whose relvars are in strata smaller than n, where all non-rule-based relvars are in stratum 0.
+
+
