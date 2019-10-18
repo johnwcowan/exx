@@ -1,0 +1,41 @@
+i	high front vowel, rounded and unrounded	i, ɪ, y, ʏ
+e	mid front vowel, rounded and unrounded	e, ø
+E	low front vowel, rounded and unrounded	a, æ, ɛ, ɶ, œ
+3	high and mid central vowel, rounded and unrounded	ɨ, ɘ, ə, ɜ, ʉ, ɵ, ɞ
+a	low central vowel, unrounded	ɐ
+u	high back vowel, rounded and unrounded	ɯ, u
+o	mid and low back vowel, rounded and unrounded	ɤ, ʌ, ɑ, o, ɔ, ɒ
+p	voiceless bilabial stop and fricative	p, ɸ
+b	voiced bilabial stop and fricative	b, β
+m	bilabial nasal	m
+f	voiceless labiodental fricative	f
+v	voiced labiodental fricative	v
+8	voiceless and voiced dental fricative	θ, ð
+4	dental nasal	n̪
+t	voiceless alveolar stop	t
+d	voiced alveolar stop	d
+s	voiceless alveolar fricative	s
+z	voiced alveolar fricative	z
+c	voiceless and voiced alveolar affricate	ts, dz
+n	voiceless and voiced alveolar nasal	n
+S	voiceless postalveolar fricative	ʃ
+Z	voiced postalveolar fricative	ʒ
+C	voiceless palato-alveolar affricate	tʃ
+j	voiced palato-alveolar affricate	dʒ
+T	voiceless and voiced palatal stop	c, ɟ
+5	palatal nasal	ɲ
+y	palatal approximant	j
+k	voiceless velar stop	k
+g	voiced velar stop	ɡ
+x	voiceless and voiced velar fricative	x, ɣ
+N	velar nasal	ŋ
+w	voiced bilabial-velar approximant	w
+q	voiceless uvular stop	q
+G	voiced uvular stop	ɢ
+X	voiceless and voiced uvular fricative, voiceless and voiced pharyngeal fricative	χ, ʁ, ħ, ʕ
+7	voiceless glottal stop	ʔ
+h	voiceless and voiced glottal fricative	h, ɦ
+L	all other laterals	ʟ, ɭ, ʎ
+l	voiced alveolar lateral approximate	l
+r	voiced apico-alveolar trill and all varieties of “r-sounds”	r, ʀ, etc.
+!	all varieties of “click-sounds”	ǃ, ǀ, ǁ, ǂ
