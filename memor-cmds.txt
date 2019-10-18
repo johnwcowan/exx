@@ -1,0 +1,7 @@
+Basic: config help serve
+Verbs: add remove edit update show trash import export
+Nouns: item view cat prop
+Configs: name email uuid view
+Exports: csv html sql record-jar
+
+Default: add item if text given, show view otherwise
