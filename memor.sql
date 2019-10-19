@@ -97,3 +97,23 @@ CREATE TABLE IF NOT EXISTS numeric_cats(
     FOREIGN KEY (propid) REFERENCES propids(propid))
     WITHOUT ROWID;
 
+CREATE VIEW IF NOT EXISTS complete_views AS
+  SELECT viewid, viewname, group_catid, ordering_catid, asc_desc,
+         view_selection.catid as selection_catid, negated,
+         view_columns.catid as column_catid, ordinal
+  FROM views
+  JOIN view_selection USING (viewid)
+  JOIN view_columns USING (viewid);
+
+CREATE VIEW IF NOT EXISTS complete_items AS
+  SELECT itemid, modified_date, due_date, other_date, text,
+         catid, source, propid, value
+  FROM items
+  JOIN item_cats USING (itemid)
+  JOIN item_props USING (itemid);
+
+CREATE VIEW IF NOT EXISTS complete_cats AS
+  SELECT catid, catname, mut_excl_children, trashed, action, parent_catid
+  FROM cats
+  JOIN cat_parent USING (catid);
+
