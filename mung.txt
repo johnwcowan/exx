@@ -3,32 +3,32 @@ Options:
 -o              capture all of standard input and write it atomically to a file (for pipelines)
 
 Editing commands:
-|               filter state to make new state (\ for multiline command)
-describe / d    set comment for state
-edit / e        make new state with editor
+|               filter state to make new state (\ for multiline command) [shell hy]
+describe / d    set comment for state [triv]
+edit / e        make new state with editor [shell hy]
 
 State tree commands:
-undo / u        undo last change to state
-redo / r        undo undo (specify a substring)
-choices / c     list redo choices
+all / a         show whole tree [show]
+undo / u        undo last change to state [triv]
+redo / r        undo undo (specify a substring) [triv]
+choices / c     list redo choices [triv or show]
 
 Tag commands:
-tag / t         tag current state with specified tag
-goto / g        jump to specified tagged state
-back / b        return from last goto
+tag / t         tag current state with specified tag [triv]
+goto / g        jump to specified tagged state [triv]
+back / b        return from last goto [triv]
 
 Termination commands:
-done            write output file, delete all states, and terminate
-quit / q / EOF  just terminate
-purge           remove most cached files, keep  metadata, and terminate
-abandon         delete all states and terminate
+done            write output file, delete all states, and terminate [exit hy]
+quit / q / EOF  just terminate [triv]
+purge           remove most cached files, keep  metadata, and terminate [exit]
+abandon         delete all states and terminate [triv]
 
 Miscellaneous commands:
-all / a         show whole tree
-show / s        file and state metadata
-page / p        view state with $PAGER
-help / h        show this help
-!               run shell command (\ for multiline command)
+show / s        file and state metadata [show]
+page / p        view state with $PAGER [shell hy]
+help / h        show this help [help]
+!               run shell command (\ for multiline command) [shell hy]
 
 Files in the state directory:
 0               copy of original file
@@ -44,3 +44,6 @@ Environment variables:
 VISUAL          Editor used by e command
 EDITOR          Used if VISUAL is not defined, defaults to vi
 PAGER           Pager used by p command, defaults to less.
+Modules: globals command load checkpoint hydrate
+         triv shell show exit help
+
