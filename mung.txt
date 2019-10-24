@@ -15,7 +15,7 @@ choices / c     list redo choices [triv or show]
 
 Tag commands:
 tag / t         tag current state with specified tag [triv]
-goto / g        jump to specified tagged state [triv]
+jump / j        go to specified tagged state [triv]
 back / b        return from last goto [triv]
 
 Termination commands:
