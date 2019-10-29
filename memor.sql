@@ -102,18 +102,18 @@ CREATE VIEW IF NOT EXISTS complete_views AS
          view_selection.catid as selection_catid, negated,
          view_columns.catid as column_catid, ordinal
   FROM views
-  JOIN view_selection USING (viewid)
-  JOIN view_columns USING (viewid);
+  LEFT JOIN view_selection USING (viewid)
+  LEFT JOIN view_columns USING (viewid);
 
 CREATE VIEW IF NOT EXISTS complete_items AS
   SELECT itemid, modified_date, due_date, other_date, text,
          catid, source, propid, value
   FROM items
-  JOIN item_cats USING (itemid)
-  JOIN item_props USING (itemid);
+  LEFT JOIN item_cats USING (itemid)
+  LEFT JOIN item_props USING (itemid);
 
 CREATE VIEW IF NOT EXISTS complete_cats AS
   SELECT catid, catname, mut_excl_children, trashed, action, parent_catid
   FROM cats
-  JOIN cat_parent USING (catid);
+  LEFT JOIN cat_parent USING (catid);
 
