@@ -1,6 +1,12 @@
 Basic: config help serve
-Verbs: add remove edit update show trash import export
 Nouns: item view cat prop
+Standard verbs: add modify describe show discard import export export-all
+
+Idioms: edit item/view/cat
+        edit-all cats
+        remove item
+        merge cats
+
 Configs: name email uuid view
 Exports: csv html sql record-jar
 
