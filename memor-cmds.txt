@@ -1,12 +1,6 @@
-Basic: config help serve
+Intransitive verbs: config help serve hierarchy remove merge
+Standard verbs: add modify edit describe show discard import export export-all
 Nouns: item view cat prop
-Standard verbs: add modify describe show discard import export export-all
-
-Idioms: edit item/view/cat
-        edit-all cats
-        remove item
-        merge cats
-
 Configs: name email uuid view
 Exports: csv html sql record-jar
 
