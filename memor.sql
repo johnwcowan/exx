@@ -5,6 +5,8 @@ CREATE TABLE IF NOT EXISTS views(
   ordering_catid VARCHAR NOT NULL,
   asc_desc SMALLINT NOT NULL,
     PRIMARY KEY (viewid),
+    FOREIGN KEY (group_catid) REFERENCES cats(catid),
+    FOREIGN KEY (group_catid) REFERENCES cats(catid),
     UNIQUE (viewname))
     WITHOUT ROWID;
 
@@ -46,7 +48,7 @@ CREATE TABLE IF NOT EXISTS view_selection(
 CREATE TABLE IF NOT EXISTS view_columns(
   viewid VARCHAR NOT NULL,
   catid VARCHAR NOT NULL,
-  ordinal INTEGER NOT NULL,
+  column-ordinal INTEGER NOT NULL,
     PRIMARY KEY (viewid, catid),
     FOREIGN KEY (viewid) REFERENCES views(viewid),
     FOREIGN KEY (catid) REFERENCES cats(catid))
@@ -73,7 +75,6 @@ CREATE TABLE IF NOT EXISTS item_props(
 CREATE TABLE IF NOT EXISTS cat_parent(
   catid VARCHAR NOT NULL,
   parent_catid VARCHAR NOT NULL,
-  value NOT NULL,
     PRIMARY KEY (catid, parent_catid),
     FOREIGN KEY (catid) REFERENCES cats(catid),
     FOREIGN KEY (parent_catid) REFERENCES cats(catid))
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS cat_parent(
 CREATE TABLE IF NOT EXISTS cat_injection(
   catid VARCHAR NOT NULL,
   existing_catid VARCHAR NOT NULL,
-  NEGATED SMALLINT NOT NULL,
+  negated SMALLINT NOT NULL,
     PRIMARY KEY (catid, existing_catid),
     FOREIGN KEY (catid) REFERENCES cats(catid),
     FOREIGN KEY (existing_catid) REFERENCES existing_catids(existing_catid))
@@ -91,7 +92,8 @@ CREATE TABLE IF NOT EXISTS cat_injection(
 CREATE TABLE IF NOT EXISTS numeric_cats(
   catid VARCHAR NOT NULL,
   propid VARCHAR NOT NULL,
-  value NOT NULL,
+  low_value NUMERIC NOT NULL,
+  high_value NUMERIC NOT NULL,
     PRIMARY KEY (catid, propid),
     FOREIGN KEY (catid) REFERENCES cats(catid),
     FOREIGN KEY (propid) REFERENCES propids(propid))
@@ -100,7 +102,7 @@ CREATE TABLE IF NOT EXISTS numeric_cats(
 CREATE VIEW IF NOT EXISTS complete_views AS
   SELECT viewid, viewname, group_catid, ordering_catid, asc_desc,
          view_selection.catid as selection_catid, negated,
-         view_columns.catid as column_catid, ordinal
+         view_columns.catid as column_catid, column_ordinal
   FROM views
   LEFT JOIN view_selection USING (viewid)
   LEFT JOIN view_columns USING (viewid);
