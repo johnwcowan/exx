@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS view_selection(
 CREATE TABLE IF NOT EXISTS view_columns(
   viewid VARCHAR NOT NULL,
   catid VARCHAR NOT NULL,
-  column-ordinal INTEGER NOT NULL,
+  column_ordinal INTEGER NOT NULL,
     PRIMARY KEY (viewid, catid),
     FOREIGN KEY (viewid) REFERENCES views(viewid),
     FOREIGN KEY (catid) REFERENCES cats(catid))
