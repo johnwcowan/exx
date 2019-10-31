@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS items(
   due_date VARCHAR NOT NULL,
   other_date VARCHAR NOT NULL,
   text CLOB NOT NULL,
+  note VARCHAR NOT NULL,
     PRIMARY KEY (itemid))
     WITHOUT ROWID;
 
@@ -39,7 +40,7 @@ CREATE TABLE IF NOT EXISTS props(
 CREATE TABLE IF NOT EXISTS view_selection(
   viewid VARCHAR NOT NULL,
   catid VARCHAR NOT NULL,
-  negated SMALLINT NOT NULL,
+  cat_negated SMALLINT NOT NULL,
     PRIMARY KEY (viewid, catid),
     FOREIGN KEY (viewid) REFERENCES views(viewid),
     FOREIGN KEY (catid) REFERENCES cats(catid))
@@ -80,7 +81,7 @@ CREATE TABLE IF NOT EXISTS cat_parent(
     FOREIGN KEY (parent_catid) REFERENCES cats(catid))
     WITHOUT ROWID;
 
-CREATE TABLE IF NOT EXISTS cat_injection(
+CREATE TABLE IF NOT EXISTS cat_rules(
   catid VARCHAR NOT NULL,
   existing_catid VARCHAR NOT NULL,
   negated SMALLINT NOT NULL,
@@ -103,6 +104,8 @@ CREATE VIEW IF NOT EXISTS complete_views AS
   SELECT viewid, viewname, group_catid, ordering_catid, asc_desc,
          view_selection.catid as selection_catid, negated,
          view_columns.catid as column_catid, column_ordinal
+         view_selection.catid as selection_catid, cat_negated,
+         view_columns.catid as column_catid, ordinal
   FROM views
   LEFT JOIN view_selection USING (viewid)
   LEFT JOIN view_columns USING (viewid);
@@ -113,9 +116,4 @@ CREATE VIEW IF NOT EXISTS complete_items AS
   FROM items
   LEFT JOIN item_cats USING (itemid)
   LEFT JOIN item_props USING (itemid);
-
-CREATE VIEW IF NOT EXISTS complete_cats AS
-  SELECT catid, catname, mut_excl_children, trashed, action, parent_catid
-  FROM cats
-  LEFT JOIN cat_parent USING (catid);
 

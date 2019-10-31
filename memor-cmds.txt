@@ -2,6 +2,6 @@ Intransitive verbs: config help serve hierarchy remove merge
 Standard verbs: add modify edit describe show discard import export export-all
 Nouns: item view cat prop
 Configs: name email uuid view
-Exports: csv html sql record-jar
+Exports: csv html sql ini
 
 Default: add item if text given, show view otherwise

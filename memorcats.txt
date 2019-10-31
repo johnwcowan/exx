@@ -1,14 +1,22 @@
 Anything
+  Addresses
+    Building Addresses
+    Electronic Message Addresses
+    Postal Addresses
+    Telephone Numbers
   Commitments
     Agreements
       Accounts
-      Offers
     Obligations
-    Addresses
-      Building Addresses
-      Electronic Message Addresses
-      Postal Addresses
-      Telephone Numbers
+    Offers
+  Events
+    Contingent Events
+    Historical Events
+    Physical Events
+    Tasks
+      Projects
+      Scheduled Tasks
+    Transactions
   IDs
   Intentions
     Goals
@@ -16,33 +24,21 @@ Anything
     Requirements
     Restrictions
   Languages
-  Organizations
-    Government Organizations
-      Country Governments
-      Businesses
-      Informal Groups
-      Non-profit Organizations
-  Landmarks
-  Buildings
-  Living Things
-      Persons
+  Living Things <= People
       Animals
+      Plants
   Places
     Buildings
-    Rooms
-    Landmarks
     Countries
+    Landmarks
+    Rooms
     States or provinces
   Social Beings
-  Time Instants
-  Time Intervals
-    Events
-      Contingent Events
-      Historical Events
-      Physical Events
-      Tasks
-        Projects
-        Scheduled Tasks
-      Transactions
-Incoming
+    Organizations
+      Businesses
+      Government Organizations
+        Country Governments
+      Informal Groups
+      Non-profit Organizations
 Trash
+Unclassified
