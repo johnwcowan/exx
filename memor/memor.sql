@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS views(
   viewid VARCHAR NOT NULL,
   viewname VARCHAR NOT NULL,
-  group_catid VARCHAR NOT NULL,
+  grouping_catid VARCHAR NOT NULL,
   ordering_catid VARCHAR NOT NULL,
   asc_desc SMALLINT NOT NULL,
     PRIMARY KEY (viewid),
@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS items(
   modified_date VARCHAR NOT NULL,
   due_date VARCHAR NOT NULL,
   other_date VARCHAR NOT NULL,
+  note CLOB NOT NULL,
   text CLOB NOT NULL,
   note VARCHAR NOT NULL,
     PRIMARY KEY (itemid))
@@ -111,7 +112,7 @@ CREATE VIEW IF NOT EXISTS complete_views AS
   LEFT JOIN view_columns USING (viewid);
 
 CREATE VIEW IF NOT EXISTS complete_items AS
-  SELECT itemid, modified_date, due_date, other_date, text,
+  SELECT itemid, modified_date, due_date, other_date, note, text,
          catid, source, propid, value
   FROM items
   LEFT JOIN item_cats USING (itemid)
