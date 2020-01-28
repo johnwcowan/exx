@@ -36,7 +36,7 @@ Files in the state directory:
 0               copy of original file
 1-n             cached state files
 states          tab-separated file of states: command, description (\t and \n escapes)
-deps .          tab-separated file of states, dependencies
+deps            tab-separated file of states, dependencies
 tags            tab-separated file of tag, state id
 stack           file containing the jump stack using state ids
 current         the current state id
