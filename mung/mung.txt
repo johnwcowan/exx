@@ -1,7 +1,4 @@
-usage: mung [-D] infile [outfile [shellscript]]
-       mung -o outfile
-
-  -D   no readline
+usage: mung file
 
 Editing commands:
 |               filter state to make new state [shell]
@@ -25,7 +22,7 @@ quit / q / EOF  just terminate [triv]
 
 Output commands:
 w / write       write current state to specified file [triv]
-m / mung        write current mung script to specified file [shell]
+m / mung        write script for current state to specified file [shell]
 
 Miscellaneous commands:
 show / s        file and state metadata [show]
