@@ -6,7 +6,7 @@ usage: mung [-D] infile [outfile [shellscript]]
 Editing commands:
 |               filter state to make new state [shell]
 describe / d    set comment for state [triv]
-init / i        initiate new state independent of previous state
+edit / e        edit state into a new state [shell]
 
 State tree commands:
 all / a         show whole tree [show]
@@ -16,18 +16,18 @@ choices / c     list redo choices [triv or show]
 
 Tag commands:
 tag / t         tag current state with specified tag [triv]
-jump / j        go to specified tagged state [triv]
-back / b        return from last goto [triv]
+jump / j        jump to specified tagged state [triv]
+back / b        return from last jump [triv]
 
 Termination commands:
-done            write output file and shell script, delete all states, and terminate [exit]
+done            delete all states and terminate [exit]
 quit / q / EOF  just terminate [triv]
-abandon         delete all states and terminate [triv]
+
+Output commands:
+w / write       write current state to specified file [triv]
+m / mung        write current mung script to specified file [shell]
 
 Miscellaneous commands:
-cd              change working directory for subcommands [triv]
-var / v         set environment variable [triv]
-delete          delete environment variable [triv]
 show / s        file and state metadata [show]
 page / p        view state with $PAGER [shell]
 help / h        show this help [help]
@@ -37,7 +37,7 @@ Files in the state directory:
 0               copy of original file
 1-n             cached state files
 states          tab-separated file of states: command, description (\t and \n escapes)
-parents         tab-separated file of states, parents
+dependencies    tab-separated file of states, dependencies
 tags            tab-separated file of tags: tag, state id
 stack           file containing the goto stack using state ids
 current         the current state id
