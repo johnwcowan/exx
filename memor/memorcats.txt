@@ -9,6 +9,9 @@ Anything
       Accounts
     Obligations
     Offers
+  Dates
+    Modification Dates
+    Due Dates
   Events
     Contingent Events
     Historical Events
@@ -40,5 +43,6 @@ Anything
         Country Governments
       Informal Groups
       Non-profit Organizations
+    People
 Trash
 Unclassified
