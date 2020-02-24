@@ -1,6 +1,6 @@
-Intransitive verbs: config help serve hierarchy remove merge
+Intransitive verbs: config help serve remove merge
 Standard verbs: add modify edit describe show discard import export export-all
-Nouns: item view cat prop
+Nouns: item view category property hierarchy
 Configs: name email uuid view
 Exports: csv html sql ini json
 
