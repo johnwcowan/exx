@@ -27,8 +27,8 @@ Anything
     Requirements
     Restrictions
   Languages
-  Living Things <= People
-      Animals
+  Living Things
+      Animals <= People
       Plants
   Places
     Buildings
