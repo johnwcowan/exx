@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS item_cats(
   itemid VARCHAR NOT NULL,
   catid VARCHAR NOT NULL,
   value VARCHAR,
-  source VARCHAR NOT NULL,
+  source VARCHAR NOT NULL,  -- user, hierarchy, date, rule, ai
     PRIMARY KEY (itemid, catid),
     FOREIGN KEY (itemid) REFERENCES items(itemid),
     FOREIGN KEY (catid) REFERENCES cats(catid))
