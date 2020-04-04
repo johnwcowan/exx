@@ -1,7 +1,7 @@
 Anything
   Addresses
     Building Addresses
-    Electronic Message Addresses
+    Email Addresses
     Postal Addresses
     Telephone Numbers
   Commitments
