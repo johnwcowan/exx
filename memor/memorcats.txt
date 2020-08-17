@@ -1,15 +1,15 @@
 Anything
-  Addresses
+  Addresses [mec]
     Building Addresses
     Email Addresses
     Postal Addresses
     Telephone Numbers
   Commitments
-    Agreements
+    Agreements [mec]
       Accounts
     Obligations
     Offers
-  Dates
+  Dates [mec]
     Modification Dates
     Due Dates
   Events
@@ -21,23 +21,23 @@ Anything
       Scheduled Tasks
     Transactions
   IDs
-  Intentions
+  Intentions [mec]
     Goals
     Permissions
     Requirements
     Restrictions
   Languages
-  Living Things
+  Living Things [mec]
       Animals <= People
       Plants
-  Places
+  Places [mec]
     Buildings
     Countries
     Landmarks
     Rooms
     States or provinces
-  Social Beings
-    Organizations
+  Social Beings [mec]
+    Organizations [mec]
       Businesses
       Government Organizations
         Country Governments
