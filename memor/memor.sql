@@ -51,39 +51,24 @@ CREATE TABLE IF NOT EXISTS view_columns(
 CREATE TABLE IF NOT EXISTS item_cats(
   itemid VARCHAR NOT NULL,
   catid VARCHAR NOT NULL,
-  value VARCHAR,
-  source VARCHAR NOT NULL,  -- user, hierarchy, date, rule, ai
+  strvalue VARCHAR,
+  numvalue FLOAT,
+  source VARCHAR NOT NULL,      -- user, hierarchy, date, rule, ai
     PRIMARY KEY (itemid, catid),
     FOREIGN KEY (itemid) REFERENCES items(itemid),
     FOREIGN KEY (catid) REFERENCES cats(catid))
     WITHOUT ROWID;
 
-CREATE TABLE IF NOT EXISTS item_props(
-  itemid VARCHAR NOT NULL,
-  propid VARCHAR NOT NULL,
-  value NOT NULL,
-    PRIMARY KEY (itemid, propid),
-    FOREIGN KEY (itemid) REFERENCES items(itemid),
-    FOREIGN KEY (propid) REFERENCES props(propid))
-    WITHOUT ROWID;
-
-CREATE TABLE IF NOT EXISTS cat_rules(
+CREATE TABLE IF NOT EXISTS rules(
   catid VARCHAR NOT NULL,
-  existing_catid VARCHAR NOT NULL,
+  source_catid VARCHAR NOT NULL,
   negated SMALLINT NOT NULL,
-    PRIMARY KEY (catid, existing_catid),
+  relop VARCHAR NOT NULL,
+  strvalue VARCHAR,      -- '', '=', '<', '>'
+  numvalue FLOAT,
+    PRIMARY KEY (catid, source_catid),
     FOREIGN KEY (catid) REFERENCES cats(catid),
-    FOREIGN KEY (existing_catid) REFERENCES existing_catids(existing_catid))
-    WITHOUT ROWID;
-
-CREATE TABLE IF NOT EXISTS numeric_cats(
-  catid VARCHAR NOT NULL,
-  propid VARCHAR NOT NULL,
-  low_value NUMERIC NOT NULL,
-  high_value NUMERIC NOT NULL,
-    PRIMARY KEY (catid, propid),
-    FOREIGN KEY (catid) REFERENCES cats(catid),
-    FOREIGN KEY (propid) REFERENCES propids(propid))
+    FOREIGN KEY (source_catid) REFERENCES cats(catid))
     WITHOUT ROWID;
 
 CREATE VIEW IF NOT EXISTS complete_views AS
@@ -98,6 +83,10 @@ CREATE VIEW IF NOT EXISTS complete_items AS
   SELECT items.itemid, modified_date, due_date, other_date, note, text,
          catid, source, propid, value
   FROM items
-  LEFT JOIN item_cats USING (itemid)
-  LEFT JOIN item_props USING (itemid);
+  LEFT JOIN item_cats USING (itemid);
 
+CREATE VIEW IF NOT EXISTS complete_cats AS
+  SELECT cats.catid, parent, catname, mut_excl_children, trashed,
+         source_catid, negated, relop, strvalue, numvalue
+  FROM cats
+  LEFT JOIN rules USING (catid);

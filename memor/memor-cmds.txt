@@ -1,7 +1,42 @@
-Intransitive verbs: config help serve remove merge
-Standard verbs: add modify edit describe show discard import export
-Nouns: item view category rule hierarchy
-Configs: name email uuid view
-Exports: csv html sql ini json
+memor config {name,email,uuid,view}
+
+memor help (cmd)
+
+memor serve
+
+memor purge
+
+memor add item
+memor add viewdef
+memor add category
+
+memor modify item
+memor modify viewdef
+memor modify category
+
+memor edit item
+memor edit viewdef
+memor edit category
+memor edit hierarchy
+
+memor show item
+memor show viewdef
+memor show category
+memor show view
+memor show hierarchy
+
+memor discard item
+memor discard viewdef
+memor discard category
+
+memor export item {html,sql,ini,json}
+memor export viewdef {html,sql,ini,json}
+memor export category {html,sql,ini,json}
+memor export view {csv,html,sql,json}
+memor export hierarchy {csv,html,sql,json}
+
+memor import item {html,sql,ini,json}
+memor import viewdef {html,sql,ini,json}
+memor import category {html,sql,ini,json}
 
 Default: add item if text given, show view otherwise
