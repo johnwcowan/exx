@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS item_cats(
     FOREIGN KEY (catid) REFERENCES cats(catid))
     WITHOUT ROWID;
 
-CREATE TABLE IF NOT EXISTS rules(
+CREATE TABLE IF NOT EXISTS cat_rules(
   catid VARCHAR NOT NULL,
   source_catid VARCHAR NOT NULL,
   negated SMALLINT NOT NULL,
@@ -89,4 +89,4 @@ CREATE VIEW IF NOT EXISTS complete_cats AS
   SELECT cats.catid, parent, catname, mut_excl_children, trashed,
          source_catid, negated, relop, strvalue, numvalue
   FROM cats
-  LEFT JOIN rules USING (catid);
+  LEFT JOIN cat_rules USING (catid);
