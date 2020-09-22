@@ -2,41 +2,57 @@ memor config {name,email,uuid,view}
 
 memor help (cmd)
 
-memor serve
+memor show	# display view
 
-memor purge
+memor hierarchy	# display hierarchy
 
-memor add item
-memor add viewdef
-memor add category
+memor html	# translate to html, optionally serve and open
 
-memor modify item
-memor modify viewdef
-memor modify category
+memor purge	# remove everything trashed
 
-memor edit item
-memor edit viewdef
-memor edit category
-memor edit hierarchy
+memor add item	# using command-line options
+memor add view	# using command-line options
+memor add category	# using command-line options
 
-memor show item
-memor show viewdef
-memor show category
-memor show view
-memor show hierarchy
+memor modify item	# using command-line options
+memor modify view	# using command-line options
+memor modify category	# using command-line options
 
-memor discard item
-memor discard viewdef
-memor discard category
+memor describe item	# using command-line options
+memor describe view	# using command-line options
+memor describe category	# using command-line options
 
-memor export item {html,sql,ini,json}
-memor export viewdef {html,sql,ini,json}
-memor export category {html,sql,ini,json}
-memor export view {csv,html,sql,json}
-memor export hierarchy {csv,html,sql,json}
+memor edit item	# with editor (.ini format)
+memor edit view	# with editor (.ini format)
+memor edit category	# with editor (.ini format)
+memor edit hierarchy	# with editor (plain format)
 
-memor import item {html,sql,ini,json}
-memor import viewdef {html,sql,ini,json}
-memor import category {html,sql,ini,json}
+memor trash item	# put in Trash category
+memor trash view	# mark trashed
+memor trash category	# subcategory of Trash category
 
-Default: add item if text given, show view otherwise
+memor export item {csv,sql,ini,json}
+memor export view {csv,sql,ini,json}
+memor export category {csv,sql,ini,json}
+memor export hierarchy {csv,sql,ini,json}
+
+memor import item {csv,sql,ini,json}
+memor import view {csv,sql,ini,json}
+memor import category {csv,sql,ini,json}
+memor import hierarchy {csv,sql,ini,json}
+
+Default: add item if text given, show otherwise
+
+Options:
+
+-o, --output	# specify output file
+-?, --open	# open output file
+-s, --serve	# run server
+-n, --name	# specify {item,view,category} name
+-G, --grouping	# specify grouping category
+-O, --ordering	# specify ordering category
+-S, --selection	# view selection (repeatable)
+-D, --descending	# descending order
+-P, --parent	# specify parent category
+-A, --after	# column to put this column after
+-B, --before	# column to put this column before

@@ -1,48 +1,48 @@
 Anything
-  Addresses [mec]
-    Building Addresses
-    Email Addresses
-    Postal Addresses
-    Telephone Numbers
-  Commitments
-    Agreements [mec]
-      Accounts
-    Obligations
-    Offers
-  Dates [mec]
-    Modification Dates
-    Due Dates
-  Events
-    Contingent Events
-    Historical Events
-    Physical Events
-    Tasks
-      Projects
-      Scheduled Tasks
-    Transactions
-  IDs
-  Intentions [mec]
-    Goals
-    Permissions
-    Requirements
-    Restrictions
-  Languages
-  Living Things [mec]
-      Animals <= People
-      Plants
-  Places [mec]
-    Buildings
-    Countries
-    Landmarks
-    Rooms
-    States or provinces
-  Social Beings [mec]
-    Organizations [mec]
-      Businesses
-      Government Organizations
-        Country Governments
-      Informal Groups
-      Non-profit Organizations
-    People
+  Address [mec]
+    Building Address
+    Email Address
+    Postal Address
+    Telephone Number
+  Commitment
+    Agreement [mec]
+      Account
+    Obligation
+    Offer
+  Date [mec]
+    Modification Date
+    Due Date
+  Event
+    Contingent Event
+    Historical Event
+    Physical Event
+    Task
+      Project
+      Scheduled Task
+    Transaction
+  ID
+  Intention [mec]
+    Goal
+    Permission
+    Requirement
+    Restriction
+  Language
+  Living Thing [mec]
+      Animal <= Person
+      Plant
+  Place [mec]
+    Building
+    Country
+    Landmark
+    Room
+    State or province
+  Social Being [mec]
+    Organization [mec]
+      Business
+      Government Organization
+        Country Government
+      Informal Group
+      Non-profit Organization
+    Person
 Trash
 Unclassified
