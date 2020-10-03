@@ -34,51 +34,15 @@ current file. N by itself is the same as N+.
 W (writeall): Writes all modified files: same as X/^-/w, but harder to get 
 wrong.
 
-T tag (tag): Reads through all tag files, which are files namd tags in the 
-directories of the tagpath (see below) to find a matching tag. Then loads the 
-file specified by the tag as if by B, and then searches for the search string 
-specified by the tag, setting dot to it. The -T command line option performs 
-this command at startup.
+Here are the command-line options I'm proposing. They affect the behavior of the command 
+part of sam. 
 
-o option (option): Allows dynamic setting of any of the sam (not samterm) 
-options explained below.
-
-Here are the options I'm proposing. They affect the behavior of the command 
-part of sam. Except as noted, all default to false.
-
-autoread [true|false]: If true, then when a file becomes the current file, 
-check if the last modification of the corresponding external file is later than 
-the last modification of the file, do an e on the file.
-
-autowrite [true|false]: If true, then just before a file stops being the 
+-a   Just before a file stops being the 
 current file, write it out with w if the modified flag is set.
 
-backup [true|false]: If true, and a file is being written externally for the 
-first time, rename the external file from foo to foo~ so that the external file 
-will be re-created. Make sure the file permissions are unchanged.
-
-prompt [true|false]: Before reading from stdin, prompt with * (same as ed 
+-p    Before reading from stdin, prompt with * (same as ed).
 prompt).
 
-readonly [true|false]: If true, the w command is forbidden unless an external 
-file is specified. This helps protect against overwriting files being examined 
-by accident.
-
-restricted [true|false]: If true, the cd, !, <, >, and | commands are forbidden 
-outright, and the w and f are forbidden if an external file is specified. This 
-prevents other changes to the file system from being made. Executing as rsam 
-sets both readonly and restricted.
-
-tagpath path: Specifies a colon-separated path of directories in which tags 
-files may be found. It is not an error if such files do not exist. Defaults to 
-..
-
-window integer: Specifies the window size used by the z command. Can be 
+-w integer: Specifies the window size used by the z command. Can be 
 overridden by the -w command line switch. Defaults to 24.
 
-Query 1: Does any of this require modification of the samterm-to-sam protocol? 
-I hope not.
-
-Query 2: Should the options above go into .samrc (in which case samterm needs 
-to parse and ignore them), or into a separate .samdrc file? The former is more 
-convenient, but the latter makes more sense for remote sam operation.
