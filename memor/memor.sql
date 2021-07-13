@@ -1,3 +1,5 @@
+PRAGMA foreign_keys = true;
+
 CREATE TABLE IF NOT EXISTS views(
   viewid VARCHAR NOT NULL PRIMARY KEY,
   viewname VARCHAR NOT NULL UNIQUE,
