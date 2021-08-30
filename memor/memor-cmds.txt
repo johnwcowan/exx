@@ -31,15 +31,15 @@ memor trash item	# put in Trash category
 memor trash view	# mark trashed
 memor trash category	# subcategory of Trash category
 
-memor export item {csv,sql,ini,json}
-memor export view {csv,sql,ini,json}
-memor export category {csv,sql,ini,json}
-memor export hierarchy {csv,sql,ini,json}
+memor export item
+memor export view
+memor export category
+memor export hierarchy
 
-memor import item {csv,sql,ini,json}
-memor import view {csv,sql,ini,json}
-memor import category {csv,sql,ini,json}
-memor import hierarchy {csv,sql,ini,json}
+memor import item
+memor import view
+memor import category
+memor import hierarchy
 
 Default: add item if text given, show otherwise
 
@@ -48,6 +48,7 @@ Options:
 -o, --output	# specify output file
 -x, --open	# open output file
 -s, --serve	# run server
+-m, --mode	# output mode {csv,sql,ini,json}
 -n, --name	# specify {item,view,category} name
 -G, --grouping	# specify grouping category
 -O, --ordering	# specify ordering category
