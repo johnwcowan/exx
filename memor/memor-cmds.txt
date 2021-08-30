@@ -46,7 +46,7 @@ Default: add item if text given, show otherwise
 Options:
 
 -o, --output	# specify output file
--?, --open	# open output file
+-x, --open	# open output file
 -s, --serve	# run server
 -n, --name	# specify {item,view,category} name
 -G, --grouping	# specify grouping category
