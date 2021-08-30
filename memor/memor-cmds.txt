@@ -47,7 +47,7 @@ Options:
 -o, --output	# specify output file (show, describe)
 -s, --serve	# run server (html)
 -x, --open	# open output file with OS (html, show, describe)
--m, --mode	# output mode {csv,sql,ini,json} (export import)
+-m, --mode	# output mode {csv,sql,ini,json} (show, describe, export, import)
 -n, --name	# specify {item,view,category} name (add, modify)
 -N, --note	# specify file of note (add item, modify item)
 -P, --parent	# specify parent category (add category, modify category)
