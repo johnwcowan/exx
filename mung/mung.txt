@@ -1,5 +1,6 @@
 usage: mung file
-       mung -gc [root]
+       mung --done file ...
+       mung --gc [root]
 
 Editing commands:
 |               filter state to make new state [shell]
@@ -52,4 +53,5 @@ Modules: globals command load checkpoint
          triv shell show mung help
 
 Shell syntax:  trailing \ for multiline command, %x% for state name/number
-`
+
+The --done option removes the states for all specified files.
