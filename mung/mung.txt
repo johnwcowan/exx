@@ -1,4 +1,5 @@
 usage: mung file
+       mung -gc [root]
 
 Editing commands:
 |               filter state to make new state [shell]
@@ -43,7 +44,7 @@ lock            pid of currently running mung (can be broken if there is no such
 Environment variables:
 
 VISUAL          Editor used by e command
-MUNG_TMP        Directory for state directories
+MUNG_STATE      Directory for state directories
 EDITOR          Used if VISUAL is not defined, defaults to vi
 PAGER           Pager used by p command, defaults to less.
 
