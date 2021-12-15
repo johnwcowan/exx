@@ -1,0 +1,63 @@
+skos:Collection
+   skos:Concept
+   skos:ConceptScheme
+       (properties inScheme, topConceptOf)
+       (properties member, memberList)
+
+skos:prefLabel, skos:altLabel and skos:hiddenLabel
+are each sub-properties of rdfs:label.
+
+Typed literals consist of a string of characters and a datatype
+URI. By convention, skos:notation is only used with typed literals
+in the object position of the triple.
+
+Plain literals consist of a string of characters and a language
+tag. By convention, skos:prefLabel (and skos:altLabel and
+skos:hiddenLabel) are only used with plain literals in the object position of the triple.
+
+skos:changeNote, skos:definition, skos:editorialNote, skos:example,
+skos:historyNote and skos:scopeNote are each sub-properties of
+skos:note; domain and range are Owl:Thing
+
+S19 The rdfs:domain of skos:semanticRelation
+is the class skos:Concept.
+
+S20	The rdfs:range of skos:semanticRelation
+is the class skos:Concept.
+
+S24	skos:broaderTransitive and skos:narrowerTransitive
+are each instances of owl:TransitiveProperty.
+
+S25	skos:narrower is owl:inverseOf the property skos:broader.
+S26	skos:narrowerTransitive is owl:inverseOf
+the property skos:broaderTransitive.
+
+skos:semanticRelation
+ |
+ +- skos:related
+ |   |
+ |   +- skos:relatedMatch
+ |
+ +- skos:broaderTransitive
+ |   |
+ |   +- skos:broader
+ |       |
+ |       +- skos:broadMatch
+ |
+ +- skos:narrowerTransitive
+ |   |
+ |   +- skos:narrower
+ |       |
+ |       +- skos:narrowMatch
+ |
+ +- skos:mappingRelation [between schemas]
+     |
+     +- skos:closeMatch
+     |   |
+     |   +- skos:exactMatch
+     |
+     +- skos:relatedMatch
+     |
+     +- skos:broadMatch
+     |
+     +- skos:narrowMatch
