@@ -1,4 +1,6 @@
 usage: mung file
+       mung --done file ...
+       mung --gc [root]
 
 Editing commands:
 |               filter state to make new state [shell]
@@ -8,7 +10,7 @@ edit / e        edit state into a new state [shell]
 State tree commands:
 all / a         show whole tree [show]
 undo / u        undo last change to state [triv]
-redo / r        undo undo (specify a substring) [triv]
+redo / r        undo undo (specifies which state to resume)  [triv]
 choices / c     list redo choices [triv or show]
 
 Tag commands:
@@ -17,12 +19,12 @@ jump / j        jump to specified tagged state [triv]
 back / b        return from last jump [triv]
 
 Termination commands:
-done            delete all states and terminate [exit]
+done            delete all states and terminate [triv]
 quit / q / EOF  just terminate [triv]
 
 Output commands:
 w / write       write current state to specified file [triv]
-m / mung        write script for current state to specified file [shell]
+m / mung        write script for current state to specified file [mung]
 
 Miscellaneous commands:
 show / s        file and state metadata [show]
@@ -43,12 +45,13 @@ lock            pid of currently running mung (can be broken if there is no such
 Environment variables:
 
 VISUAL          Editor used by e command
-MUNG_TMP        Directory for state directories
+MUNG_STATE      Directory for state directories
 EDITOR          Used if VISUAL is not defined, defaults to vi
 PAGER           Pager used by p command, defaults to less.
 
 Modules: globals command load checkpoint
-         triv shell show exit help
+         triv shell show mung help
 
 Shell syntax:  trailing \ for multiline command, %x% for state name/number
-`
+
+The --done option removes the states for all specified files.

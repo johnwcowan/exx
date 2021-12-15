@@ -1,48 +1,48 @@
-Anything
-  Address [mec]
-    Building Address
-    Email Address
-    Postal Address
-    Telephone Number
-  Commitment
-    Agreement [mec]
-      Account
-    Obligation
-    Offer
-  Date [mec]
-    Modification Date
-    Due Date
-  Event
-    Contingent Event
-    Historical Event
-    Physical Event
-    Task
-      Project
-      Scheduled Task
-    Transaction
-  ID
-  Intention [mec]
-    Goal
-    Permission
-    Requirement
-    Restriction
-  Language
-  Living Thing [mec]
-      Animal <= Person
-      Plant
-  Place [mec]
-    Building
-    Country
-    Landmark
-    Room
-    State or province
-  Social Being [mec]
-    Organization [mec]
-      Business
-      Government Organization
-        Country Government
-      Informal Group
-      Non-profit Organization
-    Person
-Trash
-Unclassified
+Anything [36bba520-d946-562a-98a6-77e12c0d343b]
+  Address (mec) [dcfbc061-c380-5bdb-a1c2-4ee56b0e3cff]
+    Building Address [9b24fa2f-9c2d-52da-8545-926c006462f9]
+    Email Address [c705bca6-3dab-51db-a148-ebcaa50422b1]
+    Postal Address [baa3a1a1-f4e4-5ab6-b679-49c2a4be8ac7]
+    Telephone Number [a41fd31c-4c5d-50c5-bd88-9bf1c4362299]
+  Commitment [d907a2e6-14fd-5aa0-b17b-438cbfcd93e4]
+    Agreement (mec) [121dd34c-f14d-5737-952a-147cd4f416b3]
+      Account [12f1bc28-2dae-5f5f-b3f6-ce4bb91ad5d1]
+    Obligation [60a3ea9c-2db1-584c-bcbc-c63aacef8f62]
+    Offer [82fad043-46be-574f-b7a1-710b398d6d0a]
+  Date (mec) [c146520e-9da9-5f07-8740-dee7954b41c9]
+    Modification Date [39d7becf-d0f8-523b-8c35-6e7e6b9da529]
+    Due Date [6f65825c-fc87-5702-981b-485ef52d6f25]
+  Event [5faae8e7-5ef4-5c42-b7aa-4b8486b1332c]
+    Contingent Event [b1428ae3-ecd5-501d-96b2-11c65e1745b4]
+    Historical Event [d37f09a4-4ac7-533e-bf4f-cb45c0df7288]
+    Physical Event [8d5504ac-1abc-57ee-b8f6-a0286f25a6d8]
+    Task [5e146793-ca54-5de3-a955-8c7fd54355f4]
+      Project [03292714-29c3-50e6-b5ba-1107a4e2a126]
+      Scheduled Task [211f8ab7-8441-52bb-94fc-9d2f5827d46b]
+    Transaction [df36789b-1704-5d34-900d-e61b86688a96]
+  ID [8300fa39-593e-5595-ac28-1264e23d0dde]
+  Intention (mec) [291105b9-a587-5b9d-9c0a-b5f32e9d795a]
+    Goal [1051b159-3974-576f-b3a8-ce763adb4603]
+    Permission [fe88b152-3172-5b3d-ab8d-b1a3d54ba5b0]
+    Requirement [fe6b1599-8296-51d1-b4fb-3be0cc2e98a5]
+    Restriction [2dc2e248-7f0d-5870-bfcc-ad48b7dc8e30]
+  Language [98c2fb1d-4855-5dee-9c97-e4a62dc4af68]
+  Living Thing (mec) [6838224b-819d-5c53-b450-155ebda0db37]
+      Animal >= Person [f4cbcf61-d383-55e8-a1e4-0f2d89c0dfce]
+      Plant [f204da05-afd8-53f4-99e0-dadc01cb0c28]
+  Place (mec) [cedf8dc1-e96e-540b-9b31-f588f8415a12]
+    Building [4ea509ee-60f8-5fa8-b620-0f85be8a3053]
+    Country [303ac513-53dc-5892-954b-7dba0294195d]
+    Landmark [9a301ef5-264e-5646-8d1a-b5a5a6dffc49]
+    Room [3483b055-ef3f-53a0-b1d5-992c8515bad4]
+    State or province [6530f680-d217-5f18-9e0c-6728f03cf609]
+  Social Being (mec) [6dfeed0c-2318-5e51-b4b4-1f6942806df9]
+    Organization (mec) [ad3e7ca3-9fbc-5ab0-b13c-2b684d27721f]
+      Business [643f8203-0818-5931-8ef3-542c12100d5b]
+      Government Organization [bd9ebd08-c055-5e31-be64-e554a7edeb8f]
+        Country Government [d6140701-d805-5de8-bdd2-e4118c6db6fe]
+      Informal Group [195e3621-9d5d-5af1-8684-1b413864b880]
+      Non-profit Organization [d2d2b3d3-60b7-518f-819c-364f4c978d5f]
+    Person [03b584d6-5a3c-5e5b-9e3f-062a0b33e320]
+Trash [eafc6300-3a3a-5389-8bf0-d530e0a5bea8]
+Unclassified [bd5c202c-ce43-5f27-92e6-90465d4df483]

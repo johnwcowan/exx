@@ -2,25 +2,24 @@ memor config {name,email,uuid,view}
 
 memor help (cmd)
 
-memor show	# display view
-
-memor hierarchy	# display hierarchy
+memor show view
+memor show hierarchy
 
 memor html	# translate to html, optionally serve and open
 
 memor purge	# remove everything trashed
 
-memor add item	# using command-line options
-memor add view	# using command-line options
-memor add category	# using command-line options
+memor add item
+memor add view
+memor add category
 
-memor modify item	# using command-line options
-memor modify view	# using command-line options
-memor modify category	# using command-line options
+memor modify item
+memor modify view
+memor modify category
 
-memor describe item	# using command-line options
-memor describe view	# using command-line options
-memor describe category	# using command-line options
+memor describe item
+memor describe view
+memor describe category
 
 memor edit item	# with editor (.ini format)
 memor edit view	# with editor (.ini format)
@@ -31,28 +30,30 @@ memor trash item	# put in Trash category
 memor trash view	# mark trashed
 memor trash category	# subcategory of Trash category
 
-memor export item {csv,sql,ini,json}
-memor export view {csv,sql,ini,json}
-memor export category {csv,sql,ini,json}
-memor export hierarchy {csv,sql,ini,json}
+memor export item
+memor export view
+memor export category
+memor export hierarchy
 
-memor import item {csv,sql,ini,json}
-memor import view {csv,sql,ini,json}
-memor import category {csv,sql,ini,json}
-memor import hierarchy {csv,sql,ini,json}
+memor import item
+memor import view
+memor import category
+memor import hierarchy
 
-Default: add item if text given, show otherwise
+Default: add item if text given, show view otherwise
 
 Options:
 
--o, --output	# specify output file
--?, --open	# open output file
--s, --serve	# run server
--n, --name	# specify {item,view,category} name
--G, --grouping	# specify grouping category
--O, --ordering	# specify ordering category
--S, --selection	# view selection (repeatable)
--D, --descending	# descending order
--P, --parent	# specify parent category
--A, --after	# column to put this column after
--B, --before	# column to put this column before
+-o, --output	# specify output file (show, describe)
+-s, --serve	# run server (html)
+-x, --open	# open output file with OS (html, show, describe)
+-m, --mode	# output mode {csv,sql,ini,json} (show, describe, export, import)
+-n, --name	# specify {item,view,category} name (add, modify)
+-N, --note	# specify file of note (add item, modify item)
+-P, --parent	# specify parent category (add category, modify category)
+-G, --grouping	# specify grouping category (add view, modify view)
+-O, --ordering	# specify ordering category (add view, modify view)
+-S, --selection	# view selection (repeatable) (add view, modify view)
+-D, --descending	# descending order (add view, modify view)
+-A, --after	# column to put this column after (add view, modify view)
+-B, --before	# column to put this column before (add view, modify view)
