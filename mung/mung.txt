@@ -44,8 +44,8 @@ lock            pid of currently running mung (can be broken if there is no such
 
 Environment variables:
 
+MUNG_STATE      Directory to store mung states, defaults to /var/tmp
 VISUAL          Editor used by e command
-MUNG_STATE      Directory for state directories
 EDITOR          Used if VISUAL is not defined, defaults to vi
 PAGER           Pager used by p command, defaults to less.
 
@@ -55,3 +55,4 @@ Modules: globals command load checkpoint
 Shell syntax:  trailing \ for multiline command, %x% for state name/number
 
 The --done option removes the states for all specified files.
+For the --gc option, see mung-gc.md
